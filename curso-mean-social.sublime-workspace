@@ -1,0 +1,804 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"ge",
+				"getUser"
+			],
+			[
+				"e",
+				"ensureAuth"
+			],
+			[
+				"m",
+				"md_auth"
+			],
+			[
+				"getUs",
+				"getUsers"
+			],
+			[
+				"use",
+				"users"
+			],
+			[
+				"se",
+				"send"
+			],
+			[
+				"fi",
+				"function"
+			],
+			[
+				"sa",
+				"saveUser"
+			],
+			[
+				"user",
+				"userStored"
+			],
+			[
+				"pa",
+				"password"
+			],
+			[
+				"Me",
+				"MessageSchema"
+			],
+			[
+				"mo",
+				"mongoose"
+			],
+			[
+				"Fo",
+				"FollowSchema"
+			],
+			[
+				"Pu",
+				"PublicationSchema"
+			],
+			[
+				"User",
+				"UserSchema"
+			],
+			[
+				"body",
+				"bodyParser"
+			],
+			[
+				"comm",
+				"comm\tComment - Single-line block comment"
+			],
+			[
+				"da",
+				"datosJson"
+			],
+			[
+				"margin",
+				"margin-left"
+			],
+			[
+				"padin",
+				"padding"
+			],
+			[
+				"tex",
+				"text-warning \tBootstrap 3 Class"
+			],
+			[
+				"i",
+				"if\tif …"
+			],
+			[
+				"re",
+				"respuesta"
+			],
+			[
+				"nu",
+				"numero_certificado"
+			],
+			[
+				"numero",
+				"numeroAleatorio"
+			],
+			[
+				"ba",
+				"background-image"
+			],
+			[
+				"te",
+				"text-warning \tBootstrap 3 Class"
+			],
+			[
+				"model",
+				"modelos"
+			],
+			[
+				"contain",
+				"container-fluid \tBootstrap 3 Class"
+			],
+			[
+				"htm",
+				"html2pdf"
+			],
+			[
+				"in",
+				"infoproducto"
+			],
+			[
+				"marg",
+				"margin-top"
+			],
+			[
+				"margin-",
+				"margin-bottom"
+			],
+			[
+				"margi",
+				"margin-left"
+			],
+			[
+				"con",
+				"conta"
+			],
+			[
+				"test",
+				"test1"
+			],
+			[
+				"aja",
+				"ajaxTraerCurso"
+			],
+			[
+				"dato",
+				"datosProducto"
+			],
+			[
+				"id",
+				"idProducto"
+			],
+			[
+				"t",
+				"test1"
+			],
+			[
+				"mar",
+				"margin-top"
+			],
+			[
+				"st",
+				"style\tAttr"
+			],
+			[
+				"btn",
+				"btn-info \tBootstrap 3 Class"
+			],
+			[
+				"pad",
+				"padding-left"
+			],
+			[
+				"ma",
+				"margin-bottom"
+			],
+			[
+				"tr",
+				"transparent"
+			],
+			[
+				"p",
+				"productos"
+			],
+			[
+				"req",
+				"require"
+			],
+			[
+				"col",
+				"color"
+			],
+			[
+				"bac",
+				"background"
+			],
+			[
+				"lista",
+				"listaCarrito"
+			],
+			[
+				"l",
+				"listaCarrito"
+			],
+			[
+				"cla",
+				"clases"
+			],
+			[
+				"item",
+				"item3"
+			],
+			[
+				"itme",
+				"item3"
+			],
+			[
+				"cl",
+				"clases"
+			],
+			[
+				"continer",
+				"container-fluid \tBootstrap 3 Class"
+			],
+			[
+				"ac",
+				"action\tAttr"
+			],
+			[
+				"lo",
+				"logo1.jpg\tw:429 h:148"
+			],
+			[
+				"s",
+				"script\tTag"
+			],
+			[
+				"pul",
+				"pull-right \tBootstrap 3 Class"
+			],
+			[
+				"col-",
+				"col-md-8 \tBootstrap 3 Class"
+			],
+			[
+				"col-md",
+				"col-md-offset-6 \tBootstrap 3 Class"
+			],
+			[
+				"com",
+				"comm-section-header\tComment - Section header comment"
+			],
+			[
+				"is",
+				"isset"
+			],
+			[
+				"el",
+				"elseif\telseif …"
+			],
+			[
+				"text-",
+				"text-muted \tBootstrap 3 Class"
+			],
+			[
+				"whi",
+				"width"
+			],
+			[
+				"no",
+				"none"
+			],
+			[
+				"fo",
+				"footer\tTag"
+			],
+			[
+				"flex-",
+				"flex-wrap"
+			],
+			[
+				"img",
+				"img-responsive \tBootstrap 3 Class"
+			],
+			[
+				"tet",
+				"text-muted \tBootstrap 3 Class"
+			],
+			[
+				"mari",
+				"margin-bottom"
+			],
+			[
+				"padi",
+				"padding-right"
+			],
+			[
+				"pading",
+				"padding-left"
+			],
+			[
+				"col-xs",
+				"col-xs-12 \tBootstrap 3 Class"
+			],
+			[
+				"cont",
+				"container-fluid \tBootstrap 3 Class"
+			],
+			[
+				"bo",
+				"bottom"
+			],
+			[
+				"back",
+				"background"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"text",
+				"text-align"
+			],
+			[
+				"fon",
+				"font-size"
+			],
+			[
+				"j",
+				"js"
+			],
+			[
+				"fono",
+				"fondo4.jpg\tw:1200 h:566"
+			],
+			[
+				"li",
+				"line-height"
+			],
+			[
+				"ov",
+				"overflow"
+			],
+			[
+				"var",
+				"var_dump"
+			],
+			[
+				"for",
+				"foreach\tforeach …"
+			],
+			[
+				"de",
+				"detenerIntervalo"
+			],
+			[
+				"mouse",
+				"mouseout"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"ite",
+				"itemPaginacion"
+			],
+			[
+				"ri",
+				"right"
+			],
+			[
+				"to",
+				"top\ttop"
+			],
+			[
+				"hei",
+				"height"
+			],
+			[
+				"po",
+				"position"
+			],
+			[
+				"ruta",
+				"rutaSubCategorias"
+			],
+			[
+				"Con",
+				"ControladorPlantilla"
+			],
+			[
+				"incl",
+				"include"
+			],
+			[
+				"h",
+				"h1\tTag"
+			],
+			[
+				"arra",
+				"array"
+			],
+			[
+				"sub",
+				"subCategorias"
+			],
+			[
+				"color",
+				"colorFondo"
+			],
+			[
+				"js",
+				"json_encode"
+			],
+			[
+				"cmm",
+				"comm-todo\tComment - To-do list"
+			],
+			[
+				"modal",
+				"modal-header \tBootstrap 3 Class"
+			],
+			[
+				"b",
+				"bg-success \tBootstrap 3 Class"
+			],
+			[
+				"di",
+				"div\tTag"
+			],
+			[
+				"he",
+				"height"
+			],
+			[
+				"dis",
+				"display"
+			],
+			[
+				"sc",
+				"script"
+			],
+			[
+				"text-align",
+				"text-align"
+			],
+			[
+				"d",
+				"display"
+			],
+			[
+				"lis",
+				"list-style"
+			],
+			[
+				"ls",
+				"list-style"
+			],
+			[
+				"pu",
+				"pull-right \tBootstrap 3 Class"
+			],
+			[
+				"col-sm",
+				"col-sm-8 \tBootstrap 3 Class"
+			],
+			[
+				"met",
+				"meta\tTag"
+			],
+			[
+				"wid",
+				"width"
+			],
+			[
+				"colo",
+				"colorUno"
+			],
+			[
+				"me",
+				"meta\tTag"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 359.0,
+		"last_filter": "Package Control: ",
+		"selected_items":
+		[
+			[
+				"Package Control: ",
+				"Package Control: Remove Package"
+			],
+			[
+				"Package Control: in",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ins",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 392.0
+	},
+	"console":
+	{
+		"height": 130.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '6f4c264a24d933ce70df5dedcf1dcaee' + 'ebe013ee18cced0ef93d5f746d80ef60'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/xampp/htdocs/curso-mean-social/api/controllers/user.js",
+		"/C/xampp/htdocs/curso-mean-social/api/routes/user.js",
+		"/C/xampp/htdocs/curso-mean-social/api/middlewares/authenticated.js",
+		"/C/xampp/htdocs/curso-mean-social/api/index.js",
+		"/C/xampp/htdocs/curso-mean-social/api/services/jwt.js",
+		"/C/xampp/htdocs/curso-mean-social/api/app.js",
+		"/C/xampp/htdocs/curso-mean-social/api/models/user.js",
+		"/C/xampp/htdocs/curso-mean-social/api/models/message.js",
+		"/C/xampp/htdocs/curso-mean-social/api/models/follow.js",
+		"/C/xampp/htdocs/curso-mean-social/api/models/publication.js",
+		"/C/xampp/htdocs/curso-mean-social/api/package.json",
+		"/C/Users/mag31/Downloads/tuecommerce/backend/modelos/productos.modelo.php",
+		"/C/Users/mag31/Downloads/tuecommerce/backend/controladores/categorias.controlador.php",
+		"/C/Users/mag31/Downloads/tuecommerce/backend/controladores/subcategorias.controlador.php",
+		"/C/Users/mag31/Downloads/tuecommerce/backend/ajax/tablaProductos.ajax.php",
+		"/C/Users/mag31/Downloads/tuecommerce/frontend/modelos/conexion.php",
+		"/C/Users/mag31/Downloads/tuecommerce/backend/controladores/comercio.controlador.php",
+		"/C/Users/mag31/Downloads/tuecommerce/backend/vistas/modulos/inicio/ultimos-usuarios.php",
+		"/C/Users/mag31/Downloads/tuecommerce/backend/modelos/rutas.php",
+		"/C/Users/mag31/Downloads/tuecommerce/backend/modelos/conexion.php",
+		"/C/Users/mag31/Downloads/tuecommerce/backend/.htaccess",
+		"/C/Users/mag31/Downloads/tuecommerce/backend/.htaccess.back",
+		"/C/Users/mag31/Downloads/tuecommerce/frontend/modelos/rutas.php",
+		"/C/Users/mag31/Downloads/tuecommerce/frontend/vistas/js/slide.js",
+		"/C/Users/mag31/Downloads/tuecommerce/frontend/.htaccess",
+		"/C/Users/mag31/Downloads/15.Finalizando-proyecto-ecommerce/modo-desarrollo/backend/.htaccess.back",
+		"/C/Users/mag31/Downloads/15.Finalizando-proyecto-ecommerce/modo-desarrollo/frontend/.htaccess.back",
+		"/C/Users/mag31/Downloads/15.Finalizando-proyecto-ecommerce/modo-produccion/frontend-produccion/.htaccess.bck",
+		"/C/Users/mag31/Downloads/15.Finalizando-proyecto-ecommerce/modo-produccion/frontend-produccion/vistas/js/slide.js",
+		"/C/xampp/htdocs/proyecto.v1/frontend/vistas/plantilla.php",
+		"/C/xampp/htdocs/proyecto.v1/frontend/vistas/modulos/gal-efe/lecture.php",
+		"/C/xampp/htdocs/proyecto.v1/frontend/vistas/modulos/prueba-final-ef.php",
+		"/C/xampp/htdocs/proyecto.v1/frontend/vistas/modulos/grade-ef.php",
+		"/C/xampp/htdocs/proyecto.v1/frontend/vistas/modulos/corintios/lecture.php",
+		"/C/xampp/htdocs/proyecto.v1/frontend/vistas/css/lecture.css",
+		"/C/xampp/htdocs/proyecto.v1/frontend/vistas/modulos/productos.php",
+		"/C/xampp/htdocs/proyecto.v1/frontend/modelos/modelo.cursos.php",
+		"/C/xampp/htdocs/proyecto.v1/frontend/vistas/modulos/grade-co.php",
+		"/C/xampp/htdocs/proyecto.v1/frontend/vistas/modulos/grade-2co.php",
+		"/C/xampp/htdocs/proyecto.v1/frontend/vistas/modulos/grade-ro.php",
+		"/C/xampp/htdocs/proyecto.v1/frontend/vistas/modulos/2corintios/lecture.php",
+		"/C/xampp/htdocs/proyecto.v1/frontend/vistas/modulos/romanos/lecture.php",
+		"/C/xampp/htdocs/proyecto.v1/frontend/vistas/modulos/infoproductos.php",
+		"/C/xampp/htdocs/proyecto.v1/frontend/vistas/js/prueba-final.js",
+		"/C/xampp/htdocs/proyecto.v1/frontend/controladores/usuarios.controlador.php",
+		"/C/xampp/htdocs/proyecto.v1/frontend/modelos/usuarios.modelo.php",
+		"/C/xampp/htdocs/proyecto.v1/backend/vistas/modulos/certificado.php",
+		"/C/xampp/htdocs/proyecto.v1/backend/vistas/modulos/informacion.php",
+		"/C/xampp/htdocs/proyecto.v1/backend/modelos/modelo.certificado.php",
+		"/C/xampp/htdocs/proyecto.v1/backend/controladores/controlador.certificado.php",
+		"/C/xampp/htdocs/proyecto.v1/frontend/controladores/carrito.controlador.php",
+		"/C/xampp/htdocs/proyecto.v1/backend/vistas/modulos/plantilla.php",
+		"/C/xampp/htdocs/proyecto.v1/backend/vistas/css/certificado.css",
+		"/C/xampp/htdocs/proyecto.v1/backend/controladores/controlador.plantilla.php",
+		"/C/xampp/htdocs/proyecto.v1/backend/vistas/plantilla.php",
+		"/C/xampp/htdocs/proyecto.v1/backend/index.php",
+		"/C/xampp/htdocs/proyecto.v1/backend/vistas/js/validacion.js",
+		"/C/xampp/htdocs/proyecto.v1/backend/vistas/modulos/error404.php",
+		"/C/xampp/htdocs/proyecto.v1/frontend/vistas/modulos/cabezote.php",
+		"/C/xampp/htdocs/proyecto.v1/backend/modelos/conexion.php",
+		"/C/xampp/htdocs/proyecto.v1/backend/modelos/rutas.php",
+		"/C/xampp/htdocs/proyecto.v1/frontend/vistas/modulos/cursos.php",
+		"/C/xampp/htdocs/proyecto.v1/backend/.htaccess",
+		"/C/xampp/htdocs/proyecto.v1/frontend/extensiones/composer.json",
+		"/C/xampp/htdocs/proyecto.v1/frontend/vistas/modulos/print.php",
+		"/C/xampp/htdocs/proyecto.v1/frontend/index.php",
+		"/C/xampp/htdocs/proyecto.v1/frontend/modelos/rutas.php",
+		"/C/xampp/htdocs/Certificado/index.php",
+		"/C/xampp/htdocs/pdf/output.php",
+		"/C/xampp/htdocs/frontend-produccion/modelos/conexion.php",
+		"/C/xampp/htdocs/frontend/modelos/conexion.php",
+		"/C/xampp/htdocs/frontend/controladores/carrito.controlador.php",
+		"/C/xampp/htdocs/frontend/vistas/js/carrito-de-compras.js",
+		"/C/xampp/htdocs/frontend/vistas/modulos/infoproducto.php",
+		"/C/xampp/htdocs/frontend/vistas/modulos/finalizar-compra.php",
+		"/C/xampp/htdocs/proyecto-v.2/frontend/vistas/modulos/infoproductos.php",
+		"/C/xampp/htdocs/proyecto-v.2/frontend/vistas/plantilla.php",
+		"/C/xampp/htdocs/proyecto-v.2/frontend/vistas/modulos/contacto.php",
+		"/C/xampp/htdocs/proyecto-v.2/frontend/vistas/modulos/form-process.php",
+		"/C/xampp/htdocs/proyecto-v.2/frontend/vistas/modulos/cabezote.php",
+		"/C/xampp/htdocs/proyecto-v.2/frontend/vistas/css/cabezote.css",
+		"/C/xampp/htdocs/proyecto-v.2/frontend/vistas/modulos/romanos/lecture.php",
+		"/C/xampp/htdocs/proyecto-v.2/frontend/vistas/modulos/prueba-final-ro.php",
+		"/C/xampp/htdocs/proyecto-v.2/frontend/vistas/modulos/grade-ro.php",
+		"/C/xampp/htdocs/proyecto-v.2/frontend/vistas/modulos/prueba-final-co.php",
+		"/C/xampp/htdocs/proyecto-v.2/frontend/vistas/modulos/grade-co.php",
+		"/C/xampp/htdocs/proyecto-v.2/frontend/vistas/modulos/prueba-final-2co.php",
+		"/C/xampp/htdocs/proyecto-v.2/frontend/vistas/modulos/corintios/lecture.php",
+		"/C/xampp/htdocs/proyecto-v.2/frontend/vistas/modulos/2corintios/lecture.php",
+		"/C/xampp/htdocs/proyecto-v.2/frontend/vistas/css/lecture.css",
+		"/C/xampp/htdocs/proyecto-v.2/frontend/vistas/modulos/grade-2co.php",
+		"/C/xampp/htdocs/proyecto-v.2/frontend/vistas/js/prueba-final.js",
+		"/C/xampp/htdocs/proyecto-v.2/frontend/controladores/usuarios.controlador.php",
+		"/C/xampp/htdocs/proyecto-v.2/frontend/modelos/usuarios.modelo.php",
+		"/C/xampp/htdocs/proyecto-v.2/frontend/vistas/modulos/2corintios/prueba-final-2co.php",
+		"/C/xampp/htdocs/proyecto-v.2/frontend/vistas/css/prueba-final.css",
+		"/C/xampp/htdocs/proyecto-v.2/frontend/vistas/js/carrito-de-compras.js",
+		"/C/xampp/htdocs/proyecto-v.2/frontend/vistas/modulos/perfil.php",
+		"/C/xampp/htdocs/proyecto-v.2/frontend/ajax/carrito.ajax.php",
+		"/C/xampp/htdocs/proyecto-v.2/frontend/vistas/modulos/grade.php",
+		"/C/xampp/htdocs/proyecto-v.2/frontend/vistas/modulos/prueba-final.php",
+		"/C/xampp/htdocs/proyecto-v.2/frontend/vistas/modulos/finalizar-compra-payu.php",
+		"/C/xampp/htdocs/proyecto-v.2/frontend/modelos/rutas.php",
+		"/C/Users/mag31/Downloads/15.Finalizando-proyecto-ecommerce/modo-produccion/frontend/vistas/modulos/carrito-de-compras.php",
+		"/C/Users/mag31/Downloads/client_secret_1046524058285-08svcc4vnp2df0vj5rsuju1ebj4o7uoj.apps.googleusercontent.com.json",
+		"/C/Users/mag31/Downloads/15.Finalizando-proyecto-ecommerce/modo-produccion/backend/vistas/plantilla.php",
+		"/C/xampp/htdocs/proyecto/frontend/vistas/css/cabezote.css",
+		"/C/xampp/htdocs/proyecto/frontend/vistas/modulos/footer.php",
+		"/C/xampp/htdocs/proyecto/frontend/vistas/modulos/perfil.php",
+		"/C/xampp/htdocs/proyecto/frontend/vistas/css/lecture.css",
+		"/C/xampp/htdocs/proyecto/frontend/vistas/css/infoproducto.css",
+		"/C/xampp/htdocs/proyecto/frontend/vistas/css/footer.css",
+		"/C/xampp/htdocs/proyecto/frontend/vistas/css/perfil.css",
+		"/C/xampp/htdocs/proyecto/frontend/vistas/modulos/productos.php",
+		"/C/xampp/htdocs/proyecto/frontend/vistas/plantilla.php",
+		"/C/xampp/htdocs/proyecto/frontend/vistas/modulos/cursos.php",
+		"/C/xampp/htdocs/proyecto/frontend/modelos/modelo.cursos.php",
+		"/C/xampp/htdocs/proyecto/frontend/vistas/modulos/cabezote.php",
+		"/C/xampp/htdocs/proyecto/frontend/vistas/modulos/slide.php",
+		"/C/xampp/htdocs/proyecto/frontend/vistas/modulos/2corintios/lecture.php",
+		"/C/xampp/htdocs/proyecto/frontend/vistas/modulos/col-fil-fi/lecture.php",
+		"/C/xampp/htdocs/proyecto/frontend/vistas/modulos/corintios/lecture.php",
+		"/C/xampp/htdocs/proyecto/frontend/vistas/modulos/gal-efe/lecture.php",
+		"/C/xampp/htdocs/proyecto/frontend/vistas/modulos/romanos/lecture.php",
+		"/C/xampp/htdocs/proyecto/frontend/controladores/controlador.cursos.php",
+		"/C/xampp/htdocs/proyecto/frontend/vistas/modulos/finalizar-compra.php",
+		"/C/xampp/htdocs/proyecto/frontend/modelos/rutas.php",
+		"/C/xampp/htdocs/proyecto-v.1/frontend/index.php"
+	],
+	"find":
+	{
+		"height": 26.0
+	},
+	"find_in_files":
+	{
+		"height": 104.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"home",
+			"video",
+			"\t\t\t\t\t\t      \t\t\n",
+			">';",
+			"btnPagar",
+			"checkout",
+			"btnCheckout"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 26.0
+	},
+	"input":
+	{
+		"height": 43.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.mdpopups":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "curso-mean-social.sublime-project",
+	"replace":
+	{
+		"height": 48.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 189.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
