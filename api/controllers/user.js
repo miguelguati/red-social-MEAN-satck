@@ -7,6 +7,8 @@ var mongoosePaginate = require('mongoose-pagination');
 var fs = require('fs');
 var path = require('path');
 
+var Follow = require ('../models/follow');
+
 function home(req, res) {
 	res.status(200).send({
 		message:'Hola mundo desde NodeJS'
@@ -115,9 +117,47 @@ function getUser(req, res){
 
 		if(!user) return res.status(404).send({message: 'El usuario no existe'});
 
-		return res.status(200).send({user});
+		followThisUser(req.user.sub, userId).then((value) => {
+			user.password = undefined;
+			return res.status(200).send({
+				user,
+			    following: value.following,
+			    followed: value.followed
+				});
+		
+		});
+			
 	});
 }
+
+
+async function followThisUser(identity_user_id, user_id){
+    try {
+        var following = await Follow.findOne({ user: identity_user_id, followed: user_id}).exec()
+            .then((following) => {
+                return following;
+            })
+            .catch((err)=>{
+                return handleerror(err);
+            });
+        var followed = await Follow.findOne({ user: user_id, followed: identity_user_id}).exec()
+            .then((followed) => {
+                console.log(followed);
+                return followed;
+            })
+            .catch((err)=>{
+                return handleerror(err);
+            });
+        return {
+            following: following,
+            followed: followed
+        }
+    } catch(e){
+        console.log(e);
+    }
+}
+
+
 
 //devolver un listado de los usuarios
 function getUsers(req, res){
@@ -135,14 +175,107 @@ function getUsers(req, res){
 
 		if(!users) return res.status(404).send({message: 'no hay usuarios disponibles'});
 
-		return res.status(200).send({
+		followUsersIds(identity_user_id).then((value) =>{
+			return res.status(200).send({
 			users,
+			users_following: value.following,
+			users_follow_me: value.followed,
 			total,
 			pages: Math.ceil(total/itemsPerPage)
 		});
+
+		});
+		
 	});
 
 }
+
+async function followUsersIds (user_id){
+	try{
+		var following = await Follow.find({'user': user_id}).select({'_id':0, '__v':0, 'user':0}).exec().then((following) =>{
+			return following;
+		}).catch((err) =>{
+			return handleerror(err);
+		});
+
+		var followed = await Follow.find({'followed': user_id}).select({'_id':0, '__v':0, 'followed':0}).exec().then((followed) =>{
+			return followed;
+		}).catch((err) =>{
+			return handleerror(err);
+		});
+
+		//metodo de following
+		var following_clean = [];
+
+		following.forEach((follow) =>{
+			following_clean.push(follow.followed);
+		});
+
+		//metodo de followed
+		var followed_clean = [];
+
+		followed.forEach((follow) =>{
+			followed_clean.push(follow.user);
+		});
+		
+
+		return {
+			following: following_clean,
+			followed: followed_clean
+		}
+	}catch(e){
+		console.log(e);
+	}
+}
+
+//contadores de follows
+ function getCounters(req, res){
+ 	var userId = req.user.sub;
+
+ 	if(req.params.id){
+ 		getCountFollow(req.params.id).then((value)=>{
+ 		return res.status(200).send( {
+ 			following: value.following,
+ 			followed: value.followed
+ 		});
+ 	});
+ 	}else{
+ 		getCountFollow(userId).then((value)=>{
+ 		return res.status(200).send( {
+ 			following: value.following,
+ 			followed: value.followed
+ 		});
+ 	});
+
+ 	}
+ 	
+ }
+
+ async function getCountFollow(user_id){
+ 	try{
+ 		var following = await Follow.countDocuments({'user':user_id}).exec().then((following) =>{
+ 		return following;
+	 	}).catch((err) =>{
+	 		return handleError(err);
+	 	});
+
+		var followed = await Follow.countDocuments({'followed':user_id}).exec().then((followed) =>{
+	 		return followed;
+	 	}).catch((err) =>{
+	 		return handleError(err);
+	 	});
+
+	 	return{
+	 		following : following,
+	 		followed: followed
+	 	}
+
+ 	}catch(e){
+ 		console.log(e);
+ 	}
+ 	
+
+ }
 
 //Edición de datos de usuario
 function updateUser(req, res){
@@ -219,8 +352,8 @@ function getImageFile(req, res){
 	var image_file = req.params.imageFile;
 	var path_file = './uploads/users/'+image_file;
 
-	fs.exists(path_file, (exits) =>{
-		if(exits){
+	fs.exists(path_file, (exists) =>{
+		if(exists){
 			res.sendFile(path.resolve(path_file));
 		}else{
 			res.status(200).send({message:'No existe la imagen..'});
@@ -237,5 +370,6 @@ module.exports = {
 	getUsers,
 	updateUser,
 	uploadImage,
-	getImageFile
+	getImageFile, 
+	getCounters
 }
