@@ -8,6 +8,7 @@ var fs = require('fs');
 var path = require('path');
 
 var Follow = require ('../models/follow');
+var Publication = require('../models/publication');
 
 function home(req, res) {
 	res.status(200).send({
@@ -236,14 +237,16 @@ async function followUsersIds (user_id){
  		getCountFollow(req.params.id).then((value)=>{
  		return res.status(200).send( {
  			following: value.following,
- 			followed: value.followed
+ 			followed: value.followed,
+ 			publication: value.publication
  		});
  	});
  	}else{
  		getCountFollow(userId).then((value)=>{
  		return res.status(200).send( {
  			following: value.following,
- 			followed: value.followed
+ 			followed: value.followed,
+ 			publication: value.publication
  		});
  	});
 
@@ -265,9 +268,16 @@ async function followUsersIds (user_id){
 	 		return handleError(err);
 	 	});
 
+	 	var publication = await Publication.countDocuments({'user': user_id}).exec().then((publication) => {
+	 		return publication;
+	 	}).catch((err)=>{
+	 		return handleError(err);
+	 	});
+
 	 	return{
 	 		following : following,
-	 		followed: followed
+	 		followed: followed,
+	 		publication: publication
 	 	}
 
  	}catch(e){
