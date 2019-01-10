@@ -299,13 +299,29 @@ function updateUser(req, res){
 		return res.status(500).send({message: 'no tienes permiso para actualizar este user'});
 	}
 
-	User.findByIdAndUpdate(userId, update, {new:true}, (err, userUpdated) => {
-		if(err) return res.status(500).send({message: ' Error en la petición'});
-
-		if(!userUpdated) return res.status(404).send({message:'no se ha podido actulizar el user'});
+	User.find({ $or:[
+				 {email: update.email},
+				 {nick: update.nick}
+		]}).exec((err, users)=>{
+			 var user_isset = false;
+			users.forEach((user) =>{
+				if(user && user._id != userId)  user_isset = true;
 		
-		return res.status(200).send({user: userUpdated});
-	});
+			});
+			
+			if(user_isset) return res.status(500).send({message: 'los datos ya están en uso'});
+
+			User.findByIdAndUpdate(userId, update, {new:true}, (err, userUpdated) => {
+				if(err) return res.status(500).send({message: ' Error en la petición'});
+
+				if(!userUpdated) return res.status(404).send({message:'no se ha podido actulizar el user'});
+				
+				return res.status(200).send({user: userUpdated});
+			});
+
+		});
+
+	
 }
 
 // Subir archivos de imagen/avatar de usuario

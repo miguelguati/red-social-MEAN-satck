@@ -1,0 +1,65 @@
+/*Generales*/
+.h1-strong{
+	font-size: 35px;
+	font-weight: bold;
+	padding-bottom: 15px;
+	margin: 20px 0 15px 13px;
+	border-bottom: 1px solid #eee;
+
+}
+.avatar{
+	width: 40px;
+	height: 40px;
+	border-radius: 30px;
+	
+
+}
+.pointer{
+	cursor: pointer;
+}
+.active {
+	
+	background: #00bc8c;
+}
+/*Cabecera*/
+.navigation{
+	background: #375a7f !important;
+}
+.navigation a{
+	color: #ffffff;
+}
+
+.navigation #navbarColor01 a{
+	color: #ffffff;
+}
+
+.navigation #navbarColor01 a:hover{
+	color: #00bc8c;
+}
+.navigation  a:hover{
+	color: #00bc8c;
+}
+
+.jumbotron{
+	padding: 20px;
+	margin-top: 15px;
+	text-align: center;
+}
+
+.home a{
+	margin-left: 5px;
+}
+
+.dropdown-menu *{
+	color: black !important;
+}
+
+.navbar-expand-lg .navbar-nav .dropdown-menu {
+    position: relative;
+    margin-left: -50px;
+    padding-left: 10px;
+}
+
+.navbar-expand-lg .perfil.navbar-nav .nav-link{
+	margin-left: 10px;
+}

@@ -1,0 +1,58 @@
+<div class=" navbar navbar-expand-lg container-fluid navigation">
+  <a class="navbar-brand" href="#">{{title}}</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarColor01">
+    
+    <ul class="navbar-nav mr-auto" *ngIf="identity">
+      <li class="nav-item ">
+        <a class="nav-link" [routerLink]="['home']" [routerLinkActive]="['active']">Home </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Features</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Pricing</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">About</a>
+      </li>
+    </ul>
+
+    <ul class=" nav navbar-nav navbar-right " *ngIf="!identity">
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/login']" [routerLinkActive] ="['active']">Login</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/registro']" [routerLinkActive] ="['active']">Registrarse</a>
+      </li>
+    </ul>
+
+    <ul class="nav perfil navbar-nav navbar-right" *ngIf="identity">
+      <li class="nav-item">
+        <!--cargar imagen del usuario-->
+        <img src="{{url + 'get-image-user/' + identity.image}}" *ngIf=" identity && identity.image" class="avatar">
+      </li>
+      
+      <!--Sesión de perfil-->
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          {{identity.name}}
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Mi perfil</a>
+          <a class="dropdown-item" [routerLink]="['/mis-datos']">Mis Datos</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item pointer" (click)="logout()">Cerrar Sesión</a>
+        </div>
+      </li>
+      
+    </ul>
+    
+  </div>
+  
+</div>
+
+<router-outlet></router-outlet>
