@@ -1,4 +1,11 @@
 /*Generales*/
+.people a:hover{
+text-decoration: none;
+color: initial;
+}
+.people a{
+	color: black;
+}
 .h1-strong{
 	font-size: 35px;
 	font-weight: bold;
