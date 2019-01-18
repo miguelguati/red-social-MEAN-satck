@@ -1,0 +1,80 @@
+<div  id="user-card"  class="card">
+
+	<div class=" row justify-content-md-center">
+		<img  class="avatar-default " src="{{url + 'get-image-user/' + identity.image}}" *ngIf="identity.image" >
+		<img class="avatar-default  " src="assets/anonymous.png" *ngIf="!identity.image" >
+	</div>
+	
+	
+	<div class="row justify-content-md-center">
+		<div class="name-surname " style="text-transform: uppercase;">
+			<a href="#">{{identity.name+' '+identity.surname}}</a>
+
+		</div>
+	</div>
+
+	<div class="row justify-content-md-center">
+		<div class="nickname">
+			<a href="#">{{identity.nick}}</a>	
+		</div>
+	</div>
+
+	<div class="row ">
+		<div class="status  col-md-4" *ngIf="stats">
+		   <a href="#">
+				<span class="label-stats">
+					Siguiendo <br>
+
+				</span>
+				<span class="number-stats">
+					{{stats.following}}
+				</span>
+			</a>
+		</div>
+
+		<div class="status col-md-4 " *ngIf="stats">
+			<a href="#">
+				<span class="label-stats">
+					Seguidores <br>
+				</span>
+				<span class="number-stats ">
+					{{stats.followed}}
+				</span>
+		    </a>
+		</div>
+
+		<div class="status col-md-4 " *ngIf="stats">
+			<a href="#">
+				<span class="label-stats">
+					Publicaciones <br>
+				</span>
+				<span class="number-stats" >
+					{{stats.publication}}
+				</span>
+			</a>
+		</div>
+
+	</div>
+
+</div>
+
+<div id="new-publication" class="card">
+	<div class="alert-success" *ngIf="status == 'success'">
+		Publicación Enviada
+	</div>
+	<div class="alert-aler" *ngIf="status == 'error'">
+		Publicación No  Enviada
+	</div>
+	<form #newPubForm="ngForm" (ngSubmit)="onSubmit(newPubForm); sendPublication($event)" class="col-lg-10">
+		<p>
+			<label >¿Qué estás pensando?</label>
+			<textarea name="text" #text="ngModel" [(ngModel)]="publication.text" class="form-control" required></textarea>
+			<span *ngIf="!text.valid && text.touched">El texto de la publicación es obligatorio</span>
+		</p>
+		<p>
+			<label for="">Subir Foto</label>
+			<input type="file" placeholder="subir imagen">
+		</p>
+		<input type="submit" value="Enviar" class="btn btn-success" [disabled]="!newPubForm.form.valid">
+	</form>
+</div>

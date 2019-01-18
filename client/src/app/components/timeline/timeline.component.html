@@ -1,0 +1,69 @@
+<div class="container-fluid">
+
+	<div class="row">
+
+		<div class="col-lg-8" id="publications">
+			
+			<div class="row cabecera" >
+				<div class="col-md-4">
+					<h1> {{title}}</h1>
+				</div>
+				<div class="col-md-4 offset-md-1 inicio">
+					<button class="btn btn-outline-primary" (click)="refresh($event)">
+						Inicio
+					</button>
+				</div>
+
+			</div>
+			
+
+			<div *ngFor="let publication of publications" class="col-md-6 offset-md-3 " >
+
+				<div class="card">
+
+					<div class="col-md-12 card-header">
+
+						<div class="row">
+							<div class="col-md-2 ">
+								<img  class="avatar " src="{{url + 'get-image-user/' + publication.user.image}}" *ngIf="identity.image" >
+								<img class="avatar-default  " src="assets/anonymous.png" *ngIf="!identity.image" >
+							</div>
+							<div class="col-md-6 nick-publication">
+								<p>{{publication.user.nick}}</p>
+							</div>
+							<div class="col-md-4">
+								<p class="text-muted">
+									{{ (publication.created_at | amFromUnix) | amLocale:'es'  | amTimeAgo}}
+								</p>
+								
+							</div>
+						</div>
+						
+					</div>
+
+					<div class="col-md-12 card-body">
+						<h5 class="card-title">{{publication.text}}</h5>
+					</div>
+					<!--<div class="col-md-12">
+						<img src="{{url + 'publications/' + publication.user.image}}">
+					</div>-->
+				</div>
+
+			</div>
+			
+			<div class="row justify-content-md-center" *ngIf="!noMore">
+				<p>
+					<button class="btn btn-outline-info " (click)="viewMore()" >Ver Más</button>
+				</p>	
+			</div>
+
+
+		</div>
+
+		
+
+		<sidebar class="col-lg-4" (sended)="refresh($event)"></sidebar>
+			
+	</div>
+	
+</div>

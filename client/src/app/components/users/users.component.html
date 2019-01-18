@@ -1,68 +1,76 @@
-<div class="col-lg-8">
-	<h1 class="h1-strong">{{title}}</h1>
+<div class="container-fluid">
+ <div class="row">
 
-	<div class="people ">
-		
-		<table class="table " >
+	<div class="col-lg-8">
+		<h1 class="h1-strong">{{title}}</h1>
+
+		<div class="people ">
 			
-			<tbody>
-				<tr *ngFor="let user of users" class="item-user">
-				  <th scope="row">{{user.nick}}</th>
-			      
-			      <td>
-			        <a href="#">
-			        	{{user.name+ ' ' + user.surname }}
-					</a>
-				  </td>
+			<table class="table " >
+				
+				<tbody>
+					<tr *ngFor="let user of users" class="item-user">
+					  <th scope="row">{{user.nick}}</th>
+				      
+				      <td>
+				        <a href="#">
+				        	{{user.name+ ' ' + user.surname }}
+						</a>
+					  </td>
 
-				  <td >
-			        <a href="#">
-			        	<img src="{{ url + 'get-image-user/' + user.image }}" class="avatar" *ngIf="user.image"/>
-			        	<img src="assets/anonymous.png" class="avatar" *ngIf="!user.image"/>
-					</a>
-				  </td>
+					  <td >
+				        <a href="#">
+				        	<img src="{{ url + 'get-image-user/' + user.image }}" class="avatar" *ngIf="user.image"/>
+				        	<img src="assets/anonymous.png" class="avatar" *ngIf="!user.image"/>
+						</a>
+					  </td>
 
-				  <td *ngIf="user._id != identity._id">
-				  	<button class="btn btn-success" *ngIf="follows.indexOf(user._id) < 0"
-				  	(click)="followUser(user._id)">
-				  		Serguir
-				  	</button>
+					  <td *ngIf="user._id != identity._id">
+					  	<button class="btn btn-success" *ngIf="follows.indexOf(user._id) < 0"
+					  	(click)="followUser(user._id)">
+					  		Serguir
+					  	</button>
 
-				  	<button class="btn btn-info" *ngIf="follows.indexOf(user._id) >= 0"
-				  		(mouseenter)="mouseEnter(user._id)"
-				  		(mouseleave)="mouseLeave(user._id)"
-				  		(click)="unfollowUser(user._id)"
-				  		[class.btn-danger]="user._id == followUserOver">
-				  		<span *ngIf="user._id == followUserOver; else following">Dejar de Serguir</span>
-				  		<ng-template #following>Siguendo</ng-template>
-				  	</button>
-				  	
-				  	
-				  </td>
+					  	<button class="btn btn-info" *ngIf="follows.indexOf(user._id) >= 0"
+					  		(mouseenter)="mouseEnter(user._id)"
+					  		(mouseleave)="mouseLeave(user._id)"
+					  		(click)="unfollowUser(user._id)"
+					  		[class.btn-danger]="user._id == followUserOver">
+					  		<span *ngIf="user._id == followUserOver; else following">Dejar de Serguir</span>
+					  		<ng-template #following>Siguendo</ng-template>
+					  	</button>
+					  	
+					  	
+					  </td>
 
-			    </tr>
-			</tbody>
+				    </tr>
+				</tbody>
 
-		</table>
+			</table>
 
-		<!--Paginación-->
-		<ul class="pagination justify-content-center">
-		    <li class="page-item" *ngIf="page > 1">
-		      <a class="page-link" [routerLink]="['/gente', prev_page]" aria-label="Previous">
-		        <span aria-hidden="true">&laquo;</span>
-		      </a>
-		    </li>
+			<!--Paginación-->
+			<ul class="pagination justify-content-center">
+			    <li class="page-item" *ngIf="page > 1">
+			      <a class="page-link" [routerLink]="['/gente', prev_page]" aria-label="Previous">
+			        <span aria-hidden="true">&laquo;</span>
+			      </a>
+			    </li>
 
-		    
-		    
-		    <li class="page-item" *ngIf="pages != page">
-		      <a class="page-link" [routerLink]="['/gente', next_page]" aria-label="Next">
-		        <span aria-hidden="true">&raquo;</span>
-		      </a>
-		    </li>
-		</ul>
+			    
+			    
+			    <li class="page-item" *ngIf="pages != page">
+			      <a class="page-link" [routerLink]="['/gente', next_page]" aria-label="Next">
+			        <span aria-hidden="true">&raquo;</span>
+			      </a>
+			    </li>
+			</ul>
 
+		</div>
+		
 	</div>
-	
 
+	<sidebar class="col-lg-4"></sidebar>
+
+ </div>
 </div>
+

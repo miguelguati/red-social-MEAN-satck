@@ -70,3 +70,54 @@ color: initial;
 .navbar-expand-lg .perfil.navbar-nav .nav-link{
 	margin-left: 10px;
 }
+
+/*Sidebar*/
+#user-card{
+	margin-top: 80px;
+	padding: 10px;
+}
+#user-card a{
+	color: #000;
+}
+
+
+#user-card span{
+	color: #999;
+}
+#user-card .status .number-stats{
+	
+	margin-left: 30px;
+}
+.avatar-default{
+	width: 85px;
+	height: 85px;
+	border-radius: 50px;
+	
+
+}
+
+#new-publication{
+	margin-top: 5px;
+
+	padding: 5px;
+}
+/*Timeline*/
+#publications .nick-publication{
+	margin-top: 5px;
+
+	padding: 0px;
+}
+#publications .card{
+	margin-top: 15px;
+	margin-bottom: 5px;
+}
+#publications .cabecera{
+	border-bottom: 1px solid #eee;
+	padding-bottom: 15px;
+	margin-top: 10px;
+
+}
+#publications .cabecera .inicio{
+	margin-top: 10px;
+	margin-left: 90px;
+}
