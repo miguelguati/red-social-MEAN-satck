@@ -13,13 +13,13 @@
 					  <th scope="row">{{user.nick}}</th>
 				      
 				      <td>
-				        <a href="#">
+				        <a [routerLink]="['/perfil', user._id]">
 				        	{{user.name+ ' ' + user.surname }}
 						</a>
 					  </td>
 
 					  <td >
-				        <a href="#">
+				        <a [routerLink]="['/perfil', user._id]">
 				        	<img src="{{ url + 'get-image-user/' + user.image }}" class="avatar" *ngIf="user.image"/>
 				        	<img src="assets/anonymous.png" class="avatar" *ngIf="!user.image"/>
 						</a>

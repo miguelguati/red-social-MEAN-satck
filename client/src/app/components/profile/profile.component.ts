@@ -19,7 +19,8 @@ export class ProfileComponent implements OnInit{
 	public token;
 	public url;
 	public stats;
-	public follow;
+	public followed;
+	public following;
 
 	constructor(
 		private _route:ActivatedRoute,
@@ -31,11 +32,13 @@ export class ProfileComponent implements OnInit{
 		this.token = this._userService.getToken();
 		this.identity = this._userService.getIdentity();
 		this.url = GLOBAL.url;
+		this.followed = false;
+		this.following = false;
 
 	}
 
 	ngOnInit(){
-		console.log("componete profile");
+		//console.log("componete profile");
 		this.loadPage();
 	}
 	loadPage(){
@@ -43,6 +46,7 @@ export class ProfileComponent implements OnInit{
 		{
 			let id = params['id'];
 			this.getUser(id);
+			this.getCounters(id);
 		})
 	}
 
@@ -50,8 +54,26 @@ export class ProfileComponent implements OnInit{
 		this._userService.getUser(id).subscribe(
 			response =>{
 				if(response.user){
-					console.log(response);
+					//console.log(response);
+
 					this.user = response.user;
+
+					if(response.following != null && response.following._id ){
+						this.following = true;
+						
+					}else{
+						this.following = false;
+
+					}
+
+					if(response.followed != null && response.followed._id ){
+						this.followed = true;
+						
+					}else{
+						this.followed = false;
+						
+					}
+
 				}else{
 					this.status = 'error';
 				}
@@ -60,6 +82,60 @@ export class ProfileComponent implements OnInit{
 				console.log(<any>error);
 				this._router.navigate(['/perfil', this.identity._id]);
 			}
-			)
+			);
+	}
+
+	getCounters(id){
+		this._userService.getCounters(id).subscribe(
+			response =>{
+
+				//console.log(response);
+
+				this.stats = response;
+			},
+			error =>{
+				console.log(<any>error);
+				
+			}
+			);
+	}
+
+	followUser(followed){
+		var follow = new Follow("", this.identity._id, followed);
+
+		this._followService.addFollow(this.token, follow).subscribe(
+			response =>{
+
+				this.following = true;
+			},
+			error =>{
+				console.log(<any>error);
+				
+			}
+			);
+	}
+
+	unfollowUser(followed){
+		
+		this._followService.deleteFollow(this.token, followed).subscribe(
+			response =>{
+
+				this.following = false;
+			},
+			error =>{
+				console.log(<any>error);
+				
+			}
+			);
+	}
+
+	public followUserOver;
+
+	mouseEnter(user_id){
+		this.followUserOver = user_id;
+	}
+
+	mouseLeave(user_id){
+		this.followUserOver = 0;
 	}
 }

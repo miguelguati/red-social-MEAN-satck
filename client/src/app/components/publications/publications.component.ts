@@ -1,4 +1,4 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit, Input} from '@angular/core';
 import { Router, ActivatedRoute, Params} from '@angular/router';
 import { User } from '../../models/user';
 import { UserService } from '../../services/user.service';
@@ -25,6 +25,8 @@ export class PublicationsComponent implements OnInit{
 	public itemsPerPage;
 	public publications: Publication[];
 
+	@Input() user : string;
+
 	constructor(
 		private _rotue: ActivatedRoute,
 		private _router: Router,
@@ -40,15 +42,15 @@ export class PublicationsComponent implements OnInit{
 
 	ngOnInit(){
 		//console.log("se cargo el component publications");
-		this.getPublications(this.page);
+		this.getPublications(this.user, this.page);
 	}	
 
-	getPublications(page, adding= false){
-		this._publicationService.getPublications(this.token, page).subscribe(
+	getPublications(user, page, adding= false){
+		this._publicationService.getPublicationsUser(this.token, user,  page).subscribe(
 			response=>{
 				
 				if(response.publications){
-					//console.log(response);
+					//console.log(response.publications);
 					
 					this.status = 'success';
 					this.total = response.total_items;
@@ -62,7 +64,7 @@ export class PublicationsComponent implements OnInit{
 						var arrayB = response.publications;
 						this.publications = arrayA.concat(arrayB);
 
-						$("html, body").animate({ scrollTop: $('body').prop("scrollHeight")}, 500);
+						$("html, body").animate({ scrollTop: $('html').prop("scrollHeight")}, 500);
 					}
 
 					if(page > this.pages){
@@ -86,14 +88,12 @@ export class PublicationsComponent implements OnInit{
 	viewMore(){
 		//console.log(this.publications.length);
 		//console.log(this.total);
-
-		if (this.publications.length  == this.total ) {
+		this.page += 1;
+		if (this.page  == this.pages ) {
 			this.noMore = true;
-		}else{
-			this.page += 1;
 		}
 
-		this.getPublications(this.page, true);
+		this.getPublications(this.user, this.page, true);
 	}
 
 

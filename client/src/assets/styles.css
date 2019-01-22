@@ -121,3 +121,48 @@ color: initial;
 	margin-top: 10px;
 	margin-left: 90px;
 }
+
+#publications .card .image img{
+	width: 100%;
+	height: 100%;
+	border-radius: 10px;
+}
+
+/* profile */
+#profile{
+	margin-top: 68px;
+}
+#profile .avatar img{
+	width: 180px;
+	height: 180px;
+}
+#profile .avatar{
+	padding-right: 0px;
+}
+
+#profile .datos-user{
+	padding-left: 0px;
+}
+
+#profile .datos-user .stats{
+	text-align: center;
+
+}
+#profile .datos-user .stats a{
+	color: #999;
+	text-decoration: none;	
+}
+
+#profile .datos-user  p{
+	
+   margin-bottom: 0.3rem;
+}
+#profile .datos-user  span{
+	
+   
+}
+
+.publications .card{
+	margin-top: 25px;
+	margin-bottom: 5px;
+}

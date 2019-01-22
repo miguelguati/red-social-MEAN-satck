@@ -1,8 +1,10 @@
 <div  id="user-card"  class="card">
 
 	<div class=" row justify-content-md-center">
-		<img  class="avatar-default " src="{{url + 'get-image-user/' + identity.image}}" *ngIf="identity.image" >
-		<img class="avatar-default  " src="assets/anonymous.png" *ngIf="!identity.image" >
+		<a [routerLink]="['/perfil', identity._id]">
+			<img  class="avatar-default " src="{{url + 'get-image-user/' + identity.image}}" *ngIf="identity.image" >
+			<img class="avatar-default  " src="assets/anonymous.png" *ngIf="!identity.image" >
+		</a>
 	</div>
 	
 	
@@ -65,7 +67,7 @@
 	<div class="alert-aler" *ngIf="status == 'error'">
 		Publicación No  Enviada
 	</div>
-	<form #newPubForm="ngForm" (ngSubmit)="onSubmit(newPubForm); sendPublication($event)" class="col-lg-10">
+	<form #newPubForm="ngForm" (ngSubmit)="onSubmit(newPubForm, $event); " class="col-lg-10">
 		<p>
 			<label >¿Qué estás pensando?</label>
 			<textarea name="text" #text="ngModel" [(ngModel)]="publication.text" class="form-control" required></textarea>
@@ -73,7 +75,7 @@
 		</p>
 		<p>
 			<label for="">Subir Foto</label>
-			<input type="file" placeholder="subir imagen">
+			<input type="file" placeholder="subir imagen" (change)="fileChangeEvent($event)">
 		</p>
 		<input type="submit" value="Enviar" class="btn btn-success" [disabled]="!newPubForm.form.valid">
 	</form>

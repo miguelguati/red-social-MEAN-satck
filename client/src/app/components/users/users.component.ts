@@ -39,7 +39,7 @@ export class UsersComponent implements OnInit{
 	}
 
 	ngOnInit(){
-		console.log('el componente users ha sido cargado');
+		//console.log('el componente users ha sido cargado');
 		this.actualPage();
 	}
 
@@ -81,7 +81,7 @@ export class UsersComponent implements OnInit{
 					this.pages = response.pages;
 					this.follows = response.users_following;
 
-					console.log(this.follows);
+					//console.log(this.follows);
 
 					if(page > this.pages){
 						this._router.navigate(['/gente/1']);

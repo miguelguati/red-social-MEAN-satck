@@ -48,7 +48,7 @@ export class TimelineComponent implements OnInit{
 			response=>{
 				
 				if(response.publications){
-					//console.log(response);
+					console.log(response);
 					
 					this.status = 'success';
 					this.total = response.total_items;
@@ -62,7 +62,7 @@ export class TimelineComponent implements OnInit{
 						var arrayB = response.publications;
 						this.publications = arrayA.concat(arrayB);
 
-						$("html, body").animate({ scrollTop: $('body').prop("scrollHeight")}, 500);
+						$("html, body").animate({ scrollTop: $('html').prop("scrollHeight")}, 500);
 					}
 
 					if(page > this.pages){
@@ -86,19 +86,29 @@ export class TimelineComponent implements OnInit{
 	viewMore(){
 		//console.log(this.publications.length);
 		//console.log(this.total);
-
-		if (this.publications.length  == this.total ) {
+		this.page += 1;
+		if (this.page  == this.pages ) {
 			this.noMore = true;
-		}else{
-			this.page += 1;
 		}
 
 		this.getPublications(this.page, true);
 	}
 
-	refresh(event){
-		console.log('se lanzo el refresh');
+	refresh(event = null){
+		//console.log('se lanzo el refresh');
 		this.getPublications(1);
+	}
+
+	deletePublication(id){
+		this._publicationService.deletePublication(this.token, id).subscribe(
+			response =>{
+				this.refresh();
+			},
+			error=>{
+				var errorMessage = <any>error;
+				console.log(errorMessage);
+			}
+			);
 	}
 
 }
