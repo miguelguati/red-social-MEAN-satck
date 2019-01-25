@@ -1,0 +1,79 @@
+<div class="container-fluid">
+ <div class="row">
+
+	<div class="col-lg-8" >
+		<div *ngIf="user">
+			<h1 class="h1-strong">{{title}} {{user.name}}</h1>
+		</div>
+		
+
+		<div class="people " *ngIf="following">
+			
+			<table class="table " >
+				
+				<tbody>
+					<tr *ngFor="let follow of following" class="item-follow.followed">
+					  <th scope="row">{{follow.followed.nick}}</th>
+				      
+				      <td>
+				        <a [routerLink]="['/perfil', follow.followed._id]">
+				        	{{follow.followed.name+ ' ' + follow.followed.surname }}
+						</a>
+					  </td>
+
+					  <td >
+				        <a [routerLink]="['/perfil', follow.followed._id]">
+				        	<img src="{{ url + 'get-image-user/' + follow.followed.image }}" class="avatar" *ngIf="follow.followed.image"/>
+				        	<img src="assets/anonymous.png" class="avatar" *ngIf="!follow.followed.image"/>
+						</a>
+					  </td>
+
+					  <td *ngIf="follow.followed._id != identity._id">
+					  	<button class="btn btn-success" *ngIf="follows.indexOf(follow.followed._id) < 0"
+					  	(click)="followUser(follow.followed._id)">
+					  		Serguir
+					  	</button>
+
+					  	<button class="btn btn-info" *ngIf="follows.indexOf(follow.followed._id) >= 0"
+					  		(mouseenter)="mouseEnter(follow.followed._id)"
+					  		(mouseleave)="mouseLeave(follow.followed._id)"
+					  		(click)="unfollowUser(follow.followed._id)"
+					  		[class.btn-danger]="follow.followed._id == followUserOver">
+					  		<span *ngIf="follow.followed._id == followUserOver; else following">Dejar de Serguir</span>
+					  		<ng-template #following>Siguendo</ng-template>
+					  	</button>
+					  	
+					  	
+					  </td>
+
+				    </tr>
+				</tbody>
+
+			</table>
+
+			<!--Paginación-->
+			<ul class="pagination justify-content-center">
+			    <li class="page-item" *ngIf="page > 1">
+			      <a class="page-link" [routerLink]="['/siguiendo', userPageId, prev_page]" aria-label="Previous">
+			        <span aria-hidden="true">&laquo;</span>
+			      </a>
+			    </li>
+
+			    
+			    
+			    <li class="page-item" *ngIf="pages != page">
+			      <a class="page-link" [routerLink]="['/siguiendo', userPageId,  next_page]" aria-label="Next">
+			        <span aria-hidden="true">&raquo;</span>
+			      </a>
+			    </li>
+			</ul>
+
+		</div>
+		
+	</div>
+
+	<sidebar class="col-lg-4"></sidebar>
+
+ </div>
+</div>
+

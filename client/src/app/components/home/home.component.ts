@@ -13,6 +13,6 @@ export class HomeComponent implements OnInit{
 	}
 
 	ngOnInit(){
-		console.log('home.component cargado');
+		//console.log('home.component cargado');
 	}
 }

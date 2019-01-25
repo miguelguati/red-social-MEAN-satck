@@ -1,0 +1,64 @@
+<div class="col-lg-10">
+	<div class="row justify-content-md-center">
+		<h3>{{title}}</h3>
+	</div>
+	
+	<div  *ngIf="messages" id="mensajes-enviados">
+			
+		<div *ngFor="let message of messages" class="col-md-10 offset-md-1" >
+
+			<div class="card">
+
+				<div class="col-md-12 card-header">
+
+					<div class="row">
+						<div class="col-md-2 ">
+							<a [routerLink]="['/perfil', message.receiver._id]">
+								<img  class="avatar " src="{{url + 'get-image-user/' + message.receiver.image}}" *ngIf="message.receiver.image" >
+							</a>
+							<a [routerLink]="['/perfil', message.receiver._id]">
+								<img class="avatar " src="assets/anonymous.png" *ngIf="!message.receiver.image">
+							</a>
+							
+						</div>
+						<div class="col-md-6 nick-publication">
+							<p>{{message.receiver.nick}}</p>
+						</div>
+						<div class="col-md-4">
+							<p class="text-muted">
+								{{ (message.created_at | amFromUnix) | amLocale:'es'  | amTimeAgo}}
+							</p>
+							
+						</div>
+					</div>
+					
+				</div>
+
+				<div class="col-md-12 card-body" >
+					<h5 class="card-title">{{message.text}}</h5>
+				</div>
+				
+			</div>
+
+		</div>
+
+		<!--Paginación-->
+		<ul class="pagination justify-content-center" *ngIf="(total > 4 )">
+		    <li class="page-item" *ngIf="page > 1">
+		      <a class="page-link" [routerLink]="['/mensajes/enviados',  prev_page]" aria-label="Previous">
+		        <span aria-hidden="true">&laquo;</span>
+		      </a>
+		    </li>
+
+		    
+		    
+		    <li class="page-item" *ngIf="pages != page">
+		      <a class="page-link" [routerLink]="['/mensajes/enviados',  next_page]" aria-label="Next">
+		        <span aria-hidden="true">&raquo;</span>
+		      </a>
+		    </li>
+		</ul>
+
+	</div>
+	<!--Listado de mensajes-->
+</div>

@@ -5,6 +5,9 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule }    from '@angular/common/http';
 import { MomentModule } from 'angular2-moment';
 
+//module custom
+import { MessagesModule } from './messages/messages.module';
+
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
@@ -15,6 +18,13 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { TimelineComponent } from './components/timeline/timeline.component';
 import { PublicationsComponent }from './components/publications/publications.component';
 import { ProfileComponent }from './components/profile/profile.component';
+import { FollowingComponent }from './components/following/following.component';
+import { FollowedComponent }from './components/followed/followed.component';
+
+//services
+import { UserService } from './services/user.service';
+import { UserGuard} from './services/user.guard';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,17 +36,22 @@ import { ProfileComponent }from './components/profile/profile.component';
     SidebarComponent,
     TimelineComponent,
     PublicationsComponent,
-    ProfileComponent
+    ProfileComponent,
+    FollowingComponent,
+    FollowedComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     routing,
     HttpClientModule,
-    MomentModule
+    MomentModule,
+    MessagesModule
   ],
   providers: [
-    appRoutingProviders
+    appRoutingProviders,
+    UserGuard,
+    UserService
   ],
   bootstrap: [AppComponent]
 })

@@ -143,7 +143,7 @@ async function followThisUser(identity_user_id, user_id){
             });
         var followed = await Follow.findOne({ user: user_id, followed: identity_user_id}).exec()
             .then((followed) => {
-                console.log(followed);
+                //console.log(followed);
                 return followed;
             })
             .catch((err)=>{
@@ -332,7 +332,7 @@ function uploadImage(req, res){
 
 	if (req.files) {
 		var file_path = req.files.image.path;
-		console.log(file_path);
+		//console.log(file_path);
 		
 		var file_split = file_path.split('\\');
 		
@@ -341,7 +341,7 @@ function uploadImage(req, res){
 		var ext_split = file_name.split('\.');
 
 		var file_ext = ext_split[1];
-		console.log(file_ext);
+		//console.log(file_ext);
 
 		if(userId != req.user.sub){
 		

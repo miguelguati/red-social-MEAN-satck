@@ -23,7 +23,7 @@
 
 	<div class="row ">
 		<div class="status  col-md-4" *ngIf="stats">
-		   <a href="#">
+		   <a [routerLink]="['/siguiendo', identity._id, 1]">
 				<span class="label-stats">
 					Siguiendo <br>
 
@@ -35,7 +35,7 @@
 		</div>
 
 		<div class="status col-md-4 " *ngIf="stats">
-			<a href="#">
+			<a [routerLink]="['/siguidores', identity._id, 1]">
 				<span class="label-stats">
 					Seguidores <br>
 				</span>
@@ -46,7 +46,7 @@
 		</div>
 
 		<div class="status col-md-4 " *ngIf="stats">
-			<a href="#">
+			<a [routerLink]="['/perfil', identity._id]">
 				<span class="label-stats">
 					Publicaciones <br>
 				</span>

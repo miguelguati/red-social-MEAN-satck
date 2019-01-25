@@ -1,0 +1,37 @@
+<div class="container-fluid">
+
+	
+	<div class="row ">
+
+		
+
+		<div class="col-lg-4">
+			<div class="row justify-content-md-center">
+				<h3>{{title}}</h3>
+
+			</div>
+
+			<ul class="nav flex-column ">
+			  <li class="nav-item" >
+			    <a class="nav-link" [routerLink]="['enviar']" [routerLinkActive]="['active']" >Enviar Mensaje</a>
+			  </li>
+			  <li class="nav-item" >
+			    <a class="nav-link" [routerLink]="['recibidos']" [routerLinkActive]="['active']">Mensajes recibidos</a>
+			  </li>
+			  <li class="nav-item" >
+			    <a class="nav-link" [routerLink]="['enviados']" [routerLinkActive]="['active']">Mensajes enviados</a>
+			  </li>
+			</ul>
+
+		</div>
+
+		<!--componentes-->
+		<div class="col-lg-8">
+			<router-outlet></router-outlet>
+		</div>
+		
+	</div>
+
+</div>
+
+

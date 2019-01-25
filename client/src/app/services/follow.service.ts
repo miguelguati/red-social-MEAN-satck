@@ -18,16 +18,46 @@ export class FollowService{
 
 	addFollow(token, follow): Observable<any>{
 		let params = JSON.stringify(follow);
-		let headres = new HttpHeaders().set('Content-Type', 'application/json')
+		let headers = new HttpHeaders().set('Content-Type', 'application/json')
 									   .set('Authorization', token);
-		return this._http.post(this.url+'follow', params, {headers:headres});
+		return this._http.post(this.url+'follow', params, {headers:headers});
+	}
+
+	getFollowing(token, user_id = null, page = 1): Observable<any>{
+
+		let headers = new HttpHeaders().set('Content-Type', 'application/json')
+									   .set('Authorization', token);
+
+	    var url = this.url+'following';
+		if(user_id != null){
+			url = this.url+'following/'+user_id+'/'+page;
+		}
+		return this._http.get(url, {headers:headers});
+	}
+	
+	getFollowed(token, user_id = null, page = 1): Observable<any>{
+
+		let headers = new HttpHeaders().set('Content-Type', 'application/json')
+									   .set('Authorization', token);
+
+	    var url = this.url+'followed';
+		if(user_id != null){
+			url = this.url+'followed/'+user_id+'/'+page;
+		}
+		return this._http.get(url, {headers:headers});
 	}
 
 	deleteFollow(token, id): Observable<any>{
 		
-		let headres = new HttpHeaders().set('Content-Type', 'application/json')
+		let headers = new HttpHeaders().set('Content-Type', 'application/json')
 									   .set('Authorization', token);
-		return this._http.delete(this.url+'follow/'+id, {headers:headres});
+		return this._http.delete(this.url+'follow/'+id, {headers:headers});
+	}
+
+	getMyFollows(token):Observable<any>{
+		let headers = new HttpHeaders().set('Content-Type', 'application/json')
+									   .set('Authorization', token);
+		return this._http.get(this.url+'get-my-follows/true', {headers:headers});
 	}
 
 }

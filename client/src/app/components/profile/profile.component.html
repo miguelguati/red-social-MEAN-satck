@@ -26,7 +26,7 @@
 						<div class="row stats ">
 							
 							<div class=" col-md-4" >
-							   <a href="#">
+							   <a [routerLink]="['/siguiendo', user._id, 1]">
 									<span class="label-stats">
 										Siguiendo <br>
 
@@ -38,7 +38,7 @@
 							</div>
 
 							<div class="status col-md-4 " *ngIf="stats">
-								<a href="#">
+								<a [routerLink]="['/siguidores', user._id, 1]">
 									<span class="label-stats">
 										Seguidores <br>
 									</span>

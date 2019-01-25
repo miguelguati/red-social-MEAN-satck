@@ -48,7 +48,7 @@ export class TimelineComponent implements OnInit{
 			response=>{
 				
 				if(response.publications){
-					console.log(response);
+					//console.log(response);
 					
 					this.status = 'success';
 					this.total = response.total_items;

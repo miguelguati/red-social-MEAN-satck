@@ -55,15 +55,55 @@ function saveFollow (req, res){
  		if(err) return res.status(500).send({message: 'Error en el servidor'});
 
  		if(!follows) return res.status(404).send({message: 'No hay resultados'});
-
- 		return res.status(200).send({
- 			total : total,
- 			pages : Math.ceil(total/itemsPerPage),
- 			follows
- 		});
-
+ 		
+ 		followUsersIds(req.user.sub).then((value) =>{
+	 		return res.status(200).send({
+	 			total : total,
+	 			pages : Math.ceil(total/itemsPerPage),
+	 			follows,
+	 			users_following: value.following,
+				users_follow_me: value.followed
+	 		});
+ 	    });
  	});
  }
+ async function followUsersIds (user_id){
+	try{
+		var following = await Follow.find({'user': user_id}).select({'_id':0, '__v':0, 'user':0}).exec().then((following) =>{
+			return following;
+		}).catch((err) =>{
+			return handleerror(err);
+		});
+
+		var followed = await Follow.find({'followed': user_id}).select({'_id':0, '__v':0, 'followed':0}).exec().then((followed) =>{
+			return followed;
+		}).catch((err) =>{
+			return handleerror(err);
+		});
+
+		//metodo de following
+		var following_clean = [];
+
+		following.forEach((follow) =>{
+			following_clean.push(follow.followed);
+		});
+
+		//metodo de followed
+		var followed_clean = [];
+
+		followed.forEach((follow) =>{
+			followed_clean.push(follow.user);
+		});
+		
+
+		return {
+			following: following_clean,
+			followed: followed_clean
+		}
+	}catch(e){
+		console.log(e);
+	}
+}
 
  function getFollowedUsers(req,res){
  	var userId = req.user.sub;
@@ -87,11 +127,15 @@ function saveFollow (req, res){
 
  		if(!follows) return res.status(404).send({message: 'No hay resultados'});
 
- 		return res.status(200).send({
- 			total : total,
- 			pages : Math.ceil(total/itemsPerPage),
- 			follows
- 		});
+ 		followUsersIds(req.user.sub).then((value) =>{
+	 		return res.status(200).send({
+	 			total : total,
+	 			pages : Math.ceil(total/itemsPerPage),
+	 			follows,
+	 			users_following: value.following,
+				users_follow_me: value.followed
+	 		});
+ 	    });
 
  	});
 
